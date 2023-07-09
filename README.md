@@ -46,6 +46,7 @@ PUT `/api/users/:userId` - Update user information by ID.
 DELETE `/api/users/:userId` - Delete user account by ID.
 <br>
 POST `/api/users/:userId/friends/:friendId` - Add  new friend  
+DELETE `/api/users/:userId/friends/:friendId` - Delete   friend  
 
 ### Thoughts
 GET `/api/thoughts` - Get all thoughts posted by a user.
