@@ -15,6 +15,7 @@ This is a Social Media API built with Express.js and Mongoose, designed to handl
      - [Reactions](#reactions)
  - [Technologies Used](#technologies-used)
  - [Contribution](#contribution)
+ - [Video link](#video-link)
  - [License](#license)
  - [Questions](#questions)
 
@@ -69,6 +70,11 @@ DELETE `/api/thoughts/:thougthId/del/:reactionId `- Remove a reaction from a tho
 ## Contribution
 Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or create a pull request.
 
+
+## Video link
+ Part -1 [Link](
+https://drive.google.com/file/d/1rQcSBauCd7zOZqad1tJg_erzW_gERyg1/view?pli=1)<br>
+Delete friend- [link](https://drive.google.com/file/d/1dAvf8hhgPcWWgQLTiiq4K0k7xbq4bCBT/view)
 
 ## License
 This project is licensed under the MIT License.
