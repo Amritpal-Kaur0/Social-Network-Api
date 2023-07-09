@@ -49,10 +49,10 @@ module.exports = {
   async delReaction(req, res) {
     try {
       const deleteReaction = await Thought.findOneAndUpdate(
-        { _id: req.params.reactionsId },
+        { _id: req.params.thoughtId },
         // {$pull:{reaction:req.params.reactionId}},
 
-        { $pull: { reactions: { reactionsId:req.params.reactionsId } } },
+        { $pull: { reactions: { _Id: req.params.reactionsId } } },
         {
           new: true,
         }
@@ -103,19 +103,16 @@ module.exports = {
 
   //delete thought
   async deleteThought(req, res) {
-    await Thought.findOneAndDelete({ _id: req.params.thoughtId }).then(
-      (deletedThought) => {
-        if (!deletedThought) {
-          return res.status(404).json({ message: "thought not found ." });
-        }
-        return User.findOneAndUpdate(
-          { _id: params.userId },
-          { $pull: { thoughts: params.thoughtId } },
-          { new: true }
-        )
-          .then((thought) => res.json({ message: "Deleted" }))
-          .catch((err) => res.json(err));
+    try {
+      const deletedThought = await Thought.findOneAndDelete({
+        _id: req.params.thoughtId,
+      });
+      if (!deletedThought) {
+        return res.status(404).json({ message: "thought not found ." });
       }
-    );
+      res.status(200).json({ message: "Thought Deleted" })
+    } catch (err) {
+      console.error(err);
+    };
   },
 };
