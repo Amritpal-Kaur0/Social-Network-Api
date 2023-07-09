@@ -76,4 +76,21 @@ async addFriend(req,res){
     console.error(err)
   }
 },
+async delFriend(req, res) {
+  try {
+      const delFriend = await User.findOneAndUpdate(
+          { _id: req.params.userId },
+          { $pull: { friends: req.params.friendId } },
+          { new: true }
+      );
+
+      if (!delFriend) {
+          return res.status(404).json({ message: "Can't find this user" });
+      }
+
+      res.status(200).json({ message: 'Friend successfully deleted' });
+  } catch (err) {
+      console.error(err);
+  }
+},
 };
