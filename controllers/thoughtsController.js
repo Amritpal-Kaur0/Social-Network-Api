@@ -12,7 +12,14 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-
+async createThought(req,res){
+  try{
+    const createThought=await Thought.create(req.body);
+    res.status(200).json(createThought)
+  }catch(err){
+console.log(err)
+  }
+},
   //get single thought
   async getSingleThought(req, res) {
     try {
